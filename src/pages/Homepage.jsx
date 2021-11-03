@@ -6,7 +6,7 @@ const Homepage = () =>{
         <>
             <div className="home-wrapper">
                     <div className="home-content">
-                    <div className="home-head">Welcome to </div>
+                    <div className="home-head">Welcome To </div>
                     <div className="home-head">
                         <img src={"assets/images/brain.svg"} height="100px" width="100px"/>
                     </div>
