@@ -28,7 +28,7 @@ class Loginpage extends React.Component{
                         <div style={{display: "flex", flexDirection: 'row', alignItems: 'space-between'}}>
                         <img src={"assets/images/brain.svg"}  height="100px" width="100px" style={{flex: '3', alignSelf: 'left'}}/>
                         <div className="login-text">
-                            Login To <br/><br/><span style={{color: '#800080'}}>Calibrain</span> <br/><br/><br/> <hr/>
+                            Login To <br/><br/><span style={{color: '#800080'}}>Calibrain</span>
                         </div>
                         </div>
                         <Form className="form"/>

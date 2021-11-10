@@ -65,7 +65,7 @@
 .login-content{
     margin: 0;
     padding: 10vh;
-    height: 70vh;
+    height: 100vh;
     width: 70vw;
     position: absolute;
     top: 50%;
@@ -78,6 +78,7 @@
 
 .form{
     color: #800080 !important;
+    font-family: 'Irish Grover';
 }
 
 .back-arrow-wrapper{
@@ -104,7 +105,7 @@
     .login-content{
         margin: 0;
         padding: 8vh;
-        height: 70vh;
+        height: 90vh;
         width: 100vw;
         position: absolute;
         top: 50%;
