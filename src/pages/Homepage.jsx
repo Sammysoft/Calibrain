@@ -12,7 +12,7 @@ const Homepage = () =>{
                     </div>
                      <div className="home-head-name">Calibrain</div>
                     <div className="home-body">
-                            <Link to='/login'>Login</Link>
+                            <Link to='/auth'>Login</Link>
                     </div>
                     </div>
             </div>
