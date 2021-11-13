@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RegisterForm from '../components/forms/registerform';
+import {Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 
 class RegisterPage extends Component {
@@ -10,7 +11,7 @@ class RegisterPage extends Component {
              <div className="login-content">
              <div className="back-arrow-wrapper" style={{paddingBottom: "50px"}}>
                     <span>
-                       <i className="fa fa-angle-left" ></i><Link to="/">Back</Link>
+                       <Link to="/"><Icon name="angle left" size="big"></Icon></Link>
                     </span>
                 </div>
 

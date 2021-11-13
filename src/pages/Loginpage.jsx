@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Form from '../components/forms/loginform';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { Icon } from 'semantic-ui-react';
 import { login } from '../actions/auth';
 
 
@@ -19,7 +20,7 @@ class Loginpage extends React.Component{
              <div className="login-content">
              <div className="back-arrow-wrapper" style={{paddingBottom: "50px"}}>
                     <span>
-                       <i className="fa fa-angle-left" ></i><Link to="/">Back</Link>
+                    <Link to="/"><Icon name="angle left" size="big"></Icon></Link>
                     </span>
                 </div>
 

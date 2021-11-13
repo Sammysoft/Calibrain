@@ -12,7 +12,9 @@ const Homepage = () =>{
                     </div>
                      <div className="home-head-name">Calibrain</div>
                     <div className="home-body">
-                            <Link to='/auth'>Login</Link>
+                            <Link to='/auth'>Login</Link> <br/>
+                            Or <br/>
+                            <Link to='/register'>Sign Up</Link>
                     </div>
                     </div>
             </div>

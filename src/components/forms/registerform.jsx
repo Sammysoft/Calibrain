@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import validator from 'validator';
 import PropTypes from 'prop-types'
-import { Form, Button, Message, Select } from 'semantic-ui-react';
+import { Form, Button, Message, Select, Input } from 'semantic-ui-react';
 import InlineError from '../messages/InlineError';
 
 const genderOptions = [
@@ -88,22 +88,30 @@ class registerform extends Component {
                         }
 
 
+                 <Form.Group widths='equal'>
 
-
-                  <Form.Group width="equals">
-                  <Form.Field error={!!errors.firstname}>
+                 <Form.Field error={!!errors.firstname}>
                         <label htmlFor="firstname">Firstname</label>
-                        <input type="text"
-                          name="password"
-                          placeholder="Secured password"
-                          value={data.password}
+                        <Input type="text" icon='user' iconPosition='left'
+                          name="firstname"
+                          placeholder="Secured firstname"
+                          value={data.firstname}
                           onChange={this.onChange}  />
-                          {errors.password && <InlineError text={errors.password} />}
+                          {errors.firstname && <InlineError text={errors.firstname} />}
+                    </Form.Field>
+                    <Form.Field error={!!errors.lastname}>
+                        <label htmlFor="lastname">Lastname</label>
+                        <Input type="text" icon='user' iconPosition='left'
+                          name="lastname"
+                          placeholder="Lastname"
+                          value={data.lastname}
+                          onChange={this.onChange}  />
+                          {errors.lastname && <InlineError text={errors.lastname} />}
                     </Form.Field>
 
                     <Form.Field error={!!errors.dateofbirth}>
                         <label htmlFor="dateofbirth">dateofbirth</label>
-                        <input type="text"
+                        <Input type="text" icon='calendar alternate' iconPosition='left'
                           name="dateofbirth"
                           placeholder="Dateofbirth"
                           value={data.dateofbirth}
@@ -113,19 +121,21 @@ class registerform extends Component {
 
                     <Form.Field error={!!errors.email}>
                         <label htmlFor="email">Email</label>
-                        <input type="email"
+                        <Input type="email" icon='envelope' iconPosition='left'
                           name="email"
                           placeholder="example@gmail.com"
                           value={data.email}
                           onChange={this.onChange}  />
                           {errors.email && <InlineError text={errors.email} />}
                     </Form.Field>
-                    </Form.Group>
 
-                    <Form.Group>
+                 </Form.Group>
+
+                    <Form.Group widths='equal'>
+
                     <Form.Field error={!!errors.post}>
                         <label htmlFor="post">post</label>
-                        <input type="text"
+                        <Input type="text" icon='trophy' iconPosition='left'
                           name="post"
                           placeholder="official post"
                           value={data.post}
@@ -150,8 +160,27 @@ class registerform extends Component {
                         search
                         searchInput={{ id: 'form-select-control-gender' }}
                     />
-
+                     <Form.Field error={!!errors.address}>
+                        <label htmlFor="address">Phonenumber</label>
+                        <Input type="text" icon='phone' iconPosition='left'
+                          name="phonenumber"
+                          placeholder="+234"
+                          value={data.phonenumber}
+                          onChange={this.onChange}  />
+                          {errors.phonenumber && <InlineError text={errors.phonenumber} />}
+                    </Form.Field>
                     </Form.Group>
+
+                    <Form.TextArea
+                    label='Address'
+                    icon='map marker alternate'
+                    iconPosition='left'
+                    placeholder='Home Address...'
+                    />
+
+
+
+
                     <Button primary>Done</Button>
                 </Form>
             </>
