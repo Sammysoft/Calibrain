@@ -102,20 +102,29 @@
 }
 
 .image-wrapper{
-    background-color: blue;
     border-radius: 70%;
-    position: fixed;
+    position: static;
     height: 70px;
     width: 70px;
     z-index: 9999;
     top: 10vh;
     right: 8vw;
     margin: auto;
+    background-image: url('assets/images/image.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .image{
     position:relative;
-    
+    background-color: tomato;
+    top: 70%;
+    bottom: 0px;
+    right: -70%;
+    width: 30%;
+    border-radius: 50%;
+
 }
 
 @media screen and (max-width: 440px){
