@@ -78,6 +78,12 @@ class registerform extends Component {
         return (
             <>
 
+                    <div className="image-wrapper">
+                        <div className="image">
+                            <img src={""} height="auto" width="auto" />
+                        </div>
+                    </div>
+
                         <Form onSubmit={this.onSubmit}>
                                         {  (errors.global) && <Message negative>
                                             <Message.Header>Error!</Message.Header>
