@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import validator from 'validator';
+import { Icon } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 import { Form, Button, Message, Select, Input } from 'semantic-ui-react';
 import InlineError from '../messages/InlineError';
@@ -80,7 +81,7 @@ class registerform extends Component {
 
                     <div className="image-wrapper">
                         <div className="image">
-                            <img src={""} height="auto" width="auto" />
+                           <Icon color="purple" name="pencil alternate" size="big" ></Icon>
                         </div>
                     </div>
 

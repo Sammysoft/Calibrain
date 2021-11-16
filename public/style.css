@@ -104,8 +104,8 @@
 .image-wrapper{
     border-radius: 70%;
     position: static;
-    height: 70px;
-    width: 70px;
+    height: 100px;
+    width: 100px;
     z-index: 9999;
     top: 10vh;
     right: 8vw;
@@ -118,14 +118,14 @@
 
 .image{
     position:relative;
-    background-color: tomato;
-    top: 70%;
+    top: 75%;
     bottom: 0px;
-    right: -70%;
-    width: 30%;
+    right: -65%;
+    width: 50%;
     border-radius: 50%;
-
+    color:"#800080"
 }
+
 
 @media screen and (max-width: 440px){
 

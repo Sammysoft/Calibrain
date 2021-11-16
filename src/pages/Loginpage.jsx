@@ -20,7 +20,7 @@ class Loginpage extends React.Component{
              <div className="login-content">
              <div className="back-arrow-wrapper" style={{paddingBottom: "50px"}}>
                     <span>
-                    <Link to="/"><Icon name="angle left" size="big"></Icon></Link>
+                    <Link to="/"><Icon name="chevron circle left" size="big"></Icon></Link>
                     </span>
                 </div>
 
