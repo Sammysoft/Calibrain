@@ -69,6 +69,7 @@ class registerform extends Component {
         if(!data.post) errors.post = `Can't be blank`;
         if(!data.dateofbirth) errors.dateofbirth = `Can't be blank`;
         if(!data.class) errors.class = `Can't be blank`;
+        if(!data.address) errors.address = `FIll in Address`;
 
         return errors;
     }
@@ -81,7 +82,10 @@ class registerform extends Component {
 
                     <div className="image-wrapper">
                         <div className="image">
-                           <Icon color="purple" name="pencil alternate" size="big" ></Icon>
+                           <label for="file" id="uploadBtn">
+                                <Icon color="purple" name="plus" size="big" ></Icon>
+                           </label>
+                           <input  type="file" id="file"  style={{display: "none"}}/>
                         </div>
                     </div>
 

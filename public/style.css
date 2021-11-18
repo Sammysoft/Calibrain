@@ -104,8 +104,8 @@
 .image-wrapper{
     border-radius: 70%;
     position: static;
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     z-index: 9999;
     top: 10vh;
     right: 8vw;
@@ -114,11 +114,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    border: 1px solid black;
 }
 
 .image{
     position:relative;
-    top: 75%;
+    top: 80%;
     bottom: 0px;
     right: -65%;
     width: 50%;

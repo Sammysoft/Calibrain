@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import SweetAlert from 'sweetalert-react';
+
 
 
 
@@ -10,11 +10,6 @@ const Homepage = () =>{
         <>
 
             <div className="home-wrapper">
-                    <SweetAlert
-                title="Welcome To Calibrain"
-                text="Are you ready for the cruise?"
-                onConfirm={() => this.setState({ show: false })}
-                />
                     <div className="home-content">
                     <div className="home-head">Welcome To </div>
                     <div className="home-head">
