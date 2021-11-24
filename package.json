@@ -49,5 +49,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://localhost:5056"
+  "proxy": "https://calibrain-api.herokuapp.com",
+  "engines": {
+    "node": "12.22.7"
+  }
 }
+
