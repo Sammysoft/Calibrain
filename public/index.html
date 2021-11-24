@@ -26,33 +26,35 @@
 
 
   </body>
-
-  <script src="js/app.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="js/app.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script type="module">
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-storage.js"></script>
 
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
 
+<script>
   // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCoOxlSYI67RVCsDJnyYtcrqHbaAhmLagA",
-    authDomain: "calibrain-7f7aa.firebaseapp.com",
-    projectId: "calibrain-7f7aa",
-    storageBucket: "calibrain-7f7aa.appspot.com",
-    messagingSenderId: "872921686124",
-    appId: "1:872921686124:web:15db0978f905402fe67849",
-    measurementId: "G-L7LHQ12NBF"
+  var firebaseConfig = {
+    apiKey: "AIzaSyA47dEI6Sw9LPNl8AtdDizlKd2yONkaN74",
+    authDomain: "file-uploads-55ed9.firebaseapp.com",
+    databaseURL: "https://file-uploads-55ed9.firebaseio.com",
+    projectId: "file-uploads-55ed9",
+    storageBucket: "file-uploads-55ed9.appspot.com",
+    messagingSenderId: "928347985917",
+    appId: "1:928347985917:web:656280c8e7ac73bdb5eb94",
+    measurementId: "G-SM107ESEYH"
   };
-
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  console.log(firebase)
+
 </script>
 </html>

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import validator from 'validator';
-import { Icon } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react';
+import Swal from 'sweetalert2';
 import PropTypes from 'prop-types'
 import { Form, Button, Message, Select, Input } from 'semantic-ui-react';
 import InlineError from '../messages/InlineError';
 
 const genderOptions = [
-    { key: 'm', text: 'Male', value: 'male' },
-    { key: 'f', text: 'Female', value: 'female' },
+    { key: 'm', text: 'Male', value: 'Male' },
+    { key: 'f', text: 'Female', value: 'Female' },
     { key: 'o', text: 'Other', value: 'other' },
   ]
 
@@ -38,26 +39,30 @@ class registerform extends Component {
 
         },
         errors: {},
-        loading: false
+        loading: false,
     }
 
     onChange= e=>this.setState({
-        ...this.state,
         data: {...this.state.data, [e.target.name]: e.target.value }
     })
 
     onSubmit = (e) => {
+        console.log(this.state.data)
         e.preventDefault();
         const errors = this.validate(this.state.data)
         this.setState({ errors });
-
         if(Object.keys(errors).length === 0){
             this.setState({loading: true})
-            console.log(this.state.data)
             this.props.submit(this.state.data)
-
-
-             .catch(err => this.setState({errors: err.response.data.errors, loading: false}))
+             .catch(err =>
+                err && this.setState({errors: err.response.data.errors, loading: false}),
+                !err &&
+                Swal.fire({
+                    title: 'Good job!',
+                    text: 'Added User To Calibrain.',
+                    icon: 'success'
+                  })
+                )
         }
     }
 
@@ -82,11 +87,12 @@ class registerform extends Component {
                         <div className="image">
                            <label for="file" id="uploadBtn">
                                 <div className="plus"><Icon color="purple" name="plus" size="big" ></Icon></div>
-                                <div className="ship"><Icon color="purple" name="paper plane" size="big" ></Icon></div>
+                                <div className="ship"><Icon onclick="uploadImage()" color="purple"  name="paper plane" size="big" ></Icon></div>
                            </label>
                            <input  type="file" id="file"  style={{display: "none"}}/>
                         </div>
                     </div>
+                    <button id="push">Push</button>
 
             <Form onSubmit={this.onSubmit} loading={loading}>
                         {  (errors.global) && <Message negative>
@@ -94,7 +100,17 @@ class registerform extends Component {
                             <p>{errors.global}</p>
                         </Message>
                         }
+
                  <Form.Group widths='equal'>
+                 <Form.Field error={!!errors.firstname} >
+                        <label htmlFor="imageuri">imageuri</label>
+                        <Input type="text" id="imageInput"
+                          name="imageuri"
+                          placeholder="wait for ImageURI"
+                          value={data.imageuri}
+                          onChange={this.onChange}  />
+                          {errors.imageuri && <InlineError text={errors.imageuri} />}
+                    </Form.Field>
                  <Form.Field error={!!errors.firstname}>
                         <label htmlFor="firstname">Firstname</label>
                         <Input type="text" icon='user' iconPosition='left'
@@ -148,25 +164,25 @@ class registerform extends Component {
                           {errors.post && <InlineError text={errors.post} />}
                     </Form.Field>
 
-                    <Form.Field
-                        control={Select}
-                        options={classOptions}
-                        label={{ children: 'Class', htmlFor: 'form-select-control-gender' }}
-                        placeholder='Class'
-                        name="category"
-                        search
-                        searchInput={{ id: 'form-select-control-gender' }}
-                    />
+                    <Form.Field error={!!errors.category}>
+                        <label htmlFor="post">Class</label>
+                        <Input type="text" icon='cuttlefish' iconPosition='left'
+                          name="category"
+                          placeholder="Enter Class [JSS1]"
+                          value={data.category}
+                          onChange={this.onChange}  />
+                          {errors.category && <InlineError text={errors.category} />}
+                    </Form.Field>
 
-                    <Form.Field
-                        control={Select}
-                        options={genderOptions}
-                        label={{ children: 'Gender', htmlFor: 'form-select-control-gender' }}
-                        placeholder='Gender'
-                        name="gender"
-                        search
-                        searchInput={{ id: 'form-select-control-gender' }}
-                    />
+                    <Form.Field error={!!errors.gender}>
+                        <label htmlFor="gender">Gender</label>
+                        <Input type="text" icon='smile' iconPosition='left'
+                          name="gender"
+                          placeholder="Male / Female"
+                          value={data.gender}
+                          onChange={this.onChange}  />
+                          {errors.gender && <InlineError text={errors.gender} />}
+                    </Form.Field>
                      <Form.Field error={!!errors.phonenumber}>
                         <label htmlFor="phonenumber">Phonenumber</label>
                         <Input type="text" icon='phone' iconPosition='left'
@@ -183,6 +199,7 @@ class registerform extends Component {
                     name="address"
                     icon='map marker alternate'
                     iconPosition='left'
+                    onChange={this.onChange}
                     placeholder='Home Address...'
                     />
                     <Button primary>Done</Button>
