@@ -6,8 +6,8 @@ export default {
         login: credentials =>
             axios.post('/api/auth/staff', { credentials })
                 .then(res =>  res.data.user),
-        register: data =>
-            axios.post('/api/postUser', { data })
+        register: user =>
+            axios.post('/api/postUser', { user })
                 .then(res => res.data.user)
     }
 

@@ -9,7 +9,7 @@ import { register } from  '../actions/users';
 class RegisterPage extends Component {
 
 
-    submit= (data) => this.props.register(data).then(()=>this.props.history.push('/auth'))
+    submit= (data) => this.props.register(data).then(()=>this.props.history.push('/dashboard'))
 
     render() {
         return (
@@ -41,11 +41,11 @@ class RegisterPage extends Component {
     }
 }
 
-RegisterPage.protoTypes = {
+RegisterPage.propTypes = {
     history: PropTypes.shape({
         push: PropTypes.func.isRequired
     }).isRequired,
     register : PropTypes.func.isRequired
 }
 
-export default connect(null, {register}) (RegisterPage);
+export default connect(null, { register })(RegisterPage);

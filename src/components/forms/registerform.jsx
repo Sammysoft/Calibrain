@@ -34,7 +34,6 @@ class registerform extends Component {
             imageurl: "",
             house: "",
             post: "",
-            class: "",
             gender: "",
 
         },
@@ -43,15 +42,22 @@ class registerform extends Component {
     }
 
     onChange= e=>this.setState({
+        ...this.state,
         data: {...this.state.data, [e.target.name]: e.target.value }
     })
 
-    onSubmit = () => {
+    onSubmit = (e) => {
+        e.preventDefault();
         const errors = this.validate(this.state.data)
         this.setState({ errors });
+
         if(Object.keys(errors).length === 0){
+            this.setState({loading: true})
+            console.log(this.state.data)
             this.props.submit(this.state.data)
-             .catch(err => this.setState({errors: err.response.data.errors}))
+
+
+             .catch(err => this.setState({errors: err.response.data.errors, loading: false}))
         }
     }
 
@@ -60,14 +66,7 @@ class registerform extends Component {
         if(!validator.isEmail(data.email)) errors.email = 'Invalid email'
         if(!data.firstname) errors.firstname = `Can't be blank`;
         if(!data.lastname) errors.lastname = `Can't be blank`;
-        if(!data.category) errors.category = `Can't be blank`;
-        if(!data.house) errors.house = `Can't be blank`;
-        if(!data.post) errors.post = `Can't be blank`;
         if(!data.dateofbirth) errors.dateofbirth = `Can't be blank`;
-        if(!data.class) errors.class = `Can't be blank`;
-        if(!data.address) errors.address = `FIll in Address`;
-        if(!data.class) errors.class = `Select Class`;
-        if(!data.gender) errors.gender = `Select Gender`;
         if(!data.phonenumber) errors.phonenumber = `Enter Phone Number`;
 
         return errors;
@@ -75,7 +74,7 @@ class registerform extends Component {
 
     render() {
 
-        const { data, errors } = this.state;
+        const { data, errors, loading } = this.state;
         return (
             <>
 
@@ -89,14 +88,13 @@ class registerform extends Component {
                         </div>
                     </div>
 
-            <Form onSubmit={this.onSubmit}>
-                                        {  (errors.global) && <Message negative>
-                                            <Message.Header>Error!</Message.Header>
-                                            <p>{errors.global}</p>
-                                        </Message>
+            <Form onSubmit={this.onSubmit} loading={loading}>
+                        {  (errors.global) && <Message negative>
+                            <Message.Header>Error!</Message.Header>
+                            <p>{errors.global}</p>
+                        </Message>
                         }
                  <Form.Group widths='equal'>
-
                  <Form.Field error={!!errors.firstname}>
                         <label htmlFor="firstname">Firstname</label>
                         <Input type="text" icon='user' iconPosition='left'
@@ -155,6 +153,7 @@ class registerform extends Component {
                         options={classOptions}
                         label={{ children: 'Class', htmlFor: 'form-select-control-gender' }}
                         placeholder='Class'
+                        name="category"
                         search
                         searchInput={{ id: 'form-select-control-gender' }}
                     />
@@ -164,6 +163,7 @@ class registerform extends Component {
                         options={genderOptions}
                         label={{ children: 'Gender', htmlFor: 'form-select-control-gender' }}
                         placeholder='Gender'
+                        name="gender"
                         search
                         searchInput={{ id: 'form-select-control-gender' }}
                     />
