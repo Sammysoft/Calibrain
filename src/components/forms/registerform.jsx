@@ -54,15 +54,8 @@ class registerform extends Component {
         if(Object.keys(errors).length === 0){
             this.setState({loading: true})
             this.props.submit(this.state.data)
-             .catch(err =>
-                this.setState({errors: err.response.data.errors, loading: false}),
-                !err &&
-                Swal.fire({
-                    title: 'Good job!',
-                    text: 'Added User To Calibrain.',
-                    icon: 'success'
-                  })
-                )
+             .catch(err=>this.setState({errors: err.response.data.errors, loading: false})
+             )
         }
     }
 

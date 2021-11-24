@@ -5,11 +5,17 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { register } from  '../actions/users';
+import Swal from 'sweetalert2';
 
 class RegisterPage extends Component {
 
 
-    submit= (data) => this.props.register(data).then(()=>this.props.history.push('/dashboard'))
+    submit= (data) => this.props.register(data).then(()=>this.props.history.push('/dashboard'),
+    Swal.fire({
+        title: 'Good job!',
+        text: 'Added User To Calibrain.',
+        icon: 'success'
+      }))
 
     render() {
         return (
