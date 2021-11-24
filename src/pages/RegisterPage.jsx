@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import RegisterForm from '../components/forms/registerform';
 import {Icon } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { register } from  '../actions/users';
 
 class RegisterPage extends Component {
+
+
+    submit= (data) => this.props.register(data).then(()=>this.props.history.push('/auth'))
+
     render() {
         return (
             <>
@@ -23,7 +30,7 @@ class RegisterPage extends Component {
                             Register On <br/><br/><span style={{color: '#800080'}}>Calibrain</span>
                         </div>
                         </div>
-                        <RegisterForm className="form"/>
+                        <RegisterForm submit={this.submit}/>
                     </div>
                 </div>
              </div>
@@ -34,4 +41,11 @@ class RegisterPage extends Component {
     }
 }
 
-export default RegisterPage;
+RegisterPage.protoTypes = {
+    history: PropTypes.shape({
+        push: PropTypes.func.isRequired
+    }).isRequired,
+    register : PropTypes.func.isRequired
+}
+
+export default connect(null, {register}) (RegisterPage);

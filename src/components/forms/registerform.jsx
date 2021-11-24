@@ -28,13 +28,14 @@ class registerform extends Component {
             email: "",
             firstname: "",
             lastname: "",
-            phonenumber: "+234",
+            phonenumber: "",
             dateofbirth: "",
             category: "",
             imageurl: "",
             house: "",
             post: "",
-            class: ""
+            class: "",
+            gender: "",
 
         },
         errors: {},
@@ -47,15 +48,10 @@ class registerform extends Component {
 
     onSubmit = () => {
         const errors = this.validate(this.state.data)
-       if(Object.keys(errors).length > 0){
-
         this.setState({ errors });
-       }
-
         if(Object.keys(errors).length === 0){
             this.props.submit(this.state.data)
              .catch(err => this.setState({errors: err.response.data.errors}))
-             console.log(errors)
         }
     }
 
@@ -70,6 +66,9 @@ class registerform extends Component {
         if(!data.dateofbirth) errors.dateofbirth = `Can't be blank`;
         if(!data.class) errors.class = `Can't be blank`;
         if(!data.address) errors.address = `FIll in Address`;
+        if(!data.class) errors.class = `Select Class`;
+        if(!data.gender) errors.gender = `Select Gender`;
+        if(!data.phonenumber) errors.phonenumber = `Enter Phone Number`;
 
         return errors;
     }
@@ -80,25 +79,22 @@ class registerform extends Component {
         return (
             <>
 
-                    <div className="image-wrapper">
+                <div className="image-wrapper">
                         <div className="image">
                            <label for="file" id="uploadBtn">
-                                <Icon color="purple" name="plus" size="big" ></Icon>
+                                <div className="plus"><Icon color="purple" name="plus" size="big" ></Icon></div>
+                                <div className="ship"><Icon color="purple" name="paper plane" size="big" ></Icon></div>
                            </label>
                            <input  type="file" id="file"  style={{display: "none"}}/>
                         </div>
                     </div>
 
-                        <Form onSubmit={this.onSubmit}>
+            <Form onSubmit={this.onSubmit}>
                                         {  (errors.global) && <Message negative>
                                             <Message.Header>Error!</Message.Header>
                                             <p>{errors.global}</p>
                                         </Message>
-
-
                         }
-
-
                  <Form.Group widths='equal'>
 
                  <Form.Field error={!!errors.firstname}>
@@ -171,8 +167,8 @@ class registerform extends Component {
                         search
                         searchInput={{ id: 'form-select-control-gender' }}
                     />
-                     <Form.Field error={!!errors.address}>
-                        <label htmlFor="address">Phonenumber</label>
+                     <Form.Field error={!!errors.phonenumber}>
+                        <label htmlFor="phonenumber">Phonenumber</label>
                         <Input type="text" icon='phone' iconPosition='left'
                           name="phonenumber"
                           placeholder="+234"
@@ -184,14 +180,11 @@ class registerform extends Component {
 
                     <Form.TextArea
                     label='Address'
+                    name="address"
                     icon='map marker alternate'
                     iconPosition='left'
                     placeholder='Home Address...'
                     />
-
-
-
-
                     <Button primary>Done</Button>
                 </Form>
             </>

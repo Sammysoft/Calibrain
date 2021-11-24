@@ -101,6 +101,7 @@
     padding-left: 5px;
 }
 
+
 .image-wrapper{
     border-radius: 70%;
     position: static;
@@ -126,6 +127,7 @@
     border-radius: 50%;
     color:"#800080"
 }
+
 
 
 @media screen and (max-width: 440px){

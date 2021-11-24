@@ -32,7 +32,7 @@ class Loginpage extends React.Component{
                             Login To <br/><br/><span style={{color: '#800080'}}>Calibrain</span>
                         </div>
                         </div>
-                        <Form className="form"/>
+                        <Form  submit={this.submit}/>
                     </div>
                 </div>
              </div>
