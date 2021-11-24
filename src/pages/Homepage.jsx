@@ -19,7 +19,7 @@ const Homepage = () =>{
                     <div className="home-body">
                             <Link to='/auth'>Login</Link> <br/>
                             Or <br/>
-                            <Link to='/register'>Sign Up</Link>
+                            <Link to='/register'>Register</Link>
                     </div>
                     </div>
             </div>
