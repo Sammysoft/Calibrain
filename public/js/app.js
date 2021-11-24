@@ -33,7 +33,7 @@ push.addEventListener('click', function(){
     Swal.fire({
         title: 'Wait Patiently',
         text: 'Image will take a while to upload, wait for response',
-        icon: 'question'
+        icon: 'warning'
     })
     const ref = firebase.storage().ref()
     const file = document.querySelector('#file').files[0]
