@@ -50,7 +50,7 @@ push.addEventListener('click', function(){
       Swal.fire({
         title: 'Image Added To Calibrain',
         text: 'Proceed with registration',
-        icon: 'Success'
+        icon: 'success'
     })
     })
   })
