@@ -55,7 +55,7 @@ class registerform extends Component {
             this.setState({loading: true})
             this.props.submit(this.state.data)
              .catch(err =>
-                err && this.setState({errors: err.response.data.errors, loading: false}),
+                this.setState({errors: err.response.data.errors, loading: false}),
                 !err &&
                 Swal.fire({
                     title: 'Good job!',
