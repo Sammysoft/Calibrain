@@ -3,7 +3,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://calibrain-api.herokuapp.com',
+      target: 'http://localhost:5056',
       changeOrigin: true,
     })
   );

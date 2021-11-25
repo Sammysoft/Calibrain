@@ -45,11 +45,11 @@ push.addEventListener('click', function(){
     task
     .then(snapshot=> snapshot.ref.getDownloadURL())
     .then(url=>{
-      console.log(url)
-      document.querySelector("#imageInput").value = url
+      document.querySelector("#imageInput").value = url;
       Swal.fire({
         title: 'Image Added To Calibrain',
         text: 'Proceed with registration',
+        input: `${url}`,
         icon: 'success'
     })
     })

@@ -10,12 +10,9 @@ import Swal from 'sweetalert2';
 class RegisterPage extends Component {
 
 
-    submit= (data) => this.props.register(data).then(()=>this.props.history.push('/dashboard'),
-    Swal.fire({
-        title: 'Good job!',
-        text: 'Added User To Calibrain.',
-        icon: 'success'
-      }))
+    submit= (data) => this.props.register(data).then(()=>this.props.history.push('/register')
+
+    )
 
     render() {
         return (

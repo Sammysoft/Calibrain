@@ -32,7 +32,7 @@ class registerform extends Component {
             phonenumber: "",
             dateofbirth: "",
             category: "",
-            imageurl: "",
+            imageuri: "",
             house: "",
             post: "",
             gender: "",
@@ -45,6 +45,19 @@ class registerform extends Component {
     onChange= e=>this.setState({
         data: {...this.state.data, [e.target.name]: e.target.value }
     })
+    newdata = {
+        email: "",
+            firstname: "",
+            lastname: "",
+            phonenumber: "",
+            dateofbirth: "",
+            category: "",
+            imageuri: "",
+            house: "",
+            post: "",
+            gender: "",
+            address: ""
+    }
 
     onSubmit = (e) => {
         console.log(this.state.data)
@@ -53,7 +66,11 @@ class registerform extends Component {
         this.setState({ errors });
         if(Object.keys(errors).length === 0){
             this.setState({loading: true})
-            this.props.submit(this.state.data)
+            this.props.submit(this.state.data).then(()=> this.setState({data: this.newdata, loading:false}), Swal.fire({
+                title: 'Good job!',
+                text: 'Added User To Calibrain.',
+                icon: 'success'
+              }))
              .catch(err=>this.setState({errors: err.response.data.errors, loading: false})
              )
         }
@@ -65,6 +82,7 @@ class registerform extends Component {
         if(!data.firstname) errors.firstname = `Can't be blank`;
         if(!data.lastname) errors.lastname = `Can't be blank`;
         if(!data.dateofbirth) errors.dateofbirth = `Can't be blank`;
+        if(!data.imageuri) errors.imageuri = `Can't be blank`;
         if(!data.phonenumber) errors.phonenumber = `Enter Phone Number`;
 
         return errors;
@@ -93,17 +111,17 @@ class registerform extends Component {
                             <p>{errors.global}</p>
                         </Message>
                         }
-
-                 <Form.Group widths='equal'>
-                 <Form.Field error={!!errors.firstname} >
+                <Form.Field error={!!errors.imageuri}>
                         <label htmlFor="imageuri">imageuri</label>
-                        <Input type="text" id="imageInput"
+                        <Input id="imageInput"  type="imageuri" icon='user secret' iconPosition='left'
                           name="imageuri"
-                          placeholder="wait for ImageURI"
+                          placeholder="Waiting..."
                           value={data.imageuri}
                           onChange={this.onChange}  />
                           {errors.imageuri && <InlineError text={errors.imageuri} />}
                     </Form.Field>
+                 <Form.Group widths='equal'>
+
                  <Form.Field error={!!errors.firstname}>
                         <label htmlFor="firstname">Firstname</label>
                         <Input type="text" icon='user' iconPosition='left'
@@ -143,6 +161,16 @@ class registerform extends Component {
                           {errors.email && <InlineError text={errors.email} />}
                     </Form.Field>
 
+                    <Form.Field error={!!errors.house}>
+                        <label htmlFor="house">Game House</label>
+                        <Input type="house" icon='bicycle' iconPosition='left'
+                          name="house"
+                          placeholder="Game"
+                          value={data.house}
+                          onChange={this.onChange}  />
+                          {errors.house && <InlineError text={errors.house} />}
+                    </Form.Field>
+
                  </Form.Group>
 
                     <Form.Group widths='equal'>
@@ -159,7 +187,7 @@ class registerform extends Component {
 
                     <Form.Field error={!!errors.category}>
                         <label htmlFor="post">Class</label>
-                        <Input type="text" icon='cuttlefish' iconPosition='left'
+                        <Input type="text" icon='graduation' iconPosition='left'
                           name="category"
                           placeholder="Enter Class [JSS1]"
                           value={data.category}
@@ -185,6 +213,7 @@ class registerform extends Component {
                           onChange={this.onChange}  />
                           {errors.phonenumber && <InlineError text={errors.phonenumber} />}
                     </Form.Field>
+
                     </Form.Group>
 
                     <Form.TextArea
