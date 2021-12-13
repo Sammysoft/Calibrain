@@ -18,8 +18,6 @@ const Homepage = () =>{
                      <div className="home-head-name">Calibrain</div>
                     <div className="home-body">
                             <Link to='/auth'>Login</Link> <br/>
-                            Or <br/>
-                            <Link to='/register'>Register</Link>
                     </div>
                     </div>
             </div>
