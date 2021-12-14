@@ -29,7 +29,7 @@ class Dashboardpage extends Component {
               <div className="dashboard-body">
                     <div className="left-menu">
                             <div className="head">
-                                    <Link to="" ><Icon name='globe' size="massive" style={{color:"#800080"}}/></Link>
+                                    <Link to="/staff" ><Icon name='globe' size="massive" style={{color:"whitesmoke"}}/></Link>
                             </div>
                             <div className="body">
                                 <p>Register A Staff</p>
@@ -37,7 +37,7 @@ class Dashboardpage extends Component {
                     </div>
                     <div className="left-menu">
                     <div className="head">
-                        <Link to=""><Icon name='universal access' size="massive" style={{color:"#800080"}}/></Link>
+                        <Link to=""><Icon name='universal access' size="massive" style={{color:"whitesmoke"}}/></Link>
                     </div>
                     <div className="body">
                     <p>Access Students</p>
@@ -45,7 +45,7 @@ class Dashboardpage extends Component {
                     </div>
                     <div className="left-menu">
                     <div className="head">
-                        <Link to=""><Icon name='send' size='massive' style={{color:"#800080"}}/></Link>
+                        <Link to=""><Icon name='send' size='massive' style={{color:"whitesmoke"}}/></Link>
                     </div>
                     <div className="body">
                     <p>Upload Scores</p>
@@ -55,7 +55,7 @@ class Dashboardpage extends Component {
                 <div className="dashboard-body">
                     <div className="left-menu">
                             <div className="head">
-                                    <Link to="/register"><Icon name='globe' size="massive" style={{color:"#800080"}}/></Link>
+                                    <Link to="/register"><Icon name='globe' size="massive" style={{color:"whitesmoke"}}/></Link>
                             </div>
                             <div className="body">
                                 <p>Register Students</p>
@@ -63,7 +63,7 @@ class Dashboardpage extends Component {
                     </div>
                     <div className="left-menu">
                     <div className="head">
-                        <Link to=""><Icon name='map pin' size="massive" style={{color:"#800080"}} /></Link>
+                        <Link to=""><Icon name='map pin' size="massive" style={{color:"whitesmoke"}} /></Link>
                     </div>
                     <div className="body">
                     <p>Access Staffs</p>
@@ -71,7 +71,7 @@ class Dashboardpage extends Component {
                     </div>
                     <div className="left-menu">
                     <div className="head">
-                       <Link to=""> <Icon name='file pdf' size='massive' style={{color:"#800080"}}/></Link>
+                       <Link to=""> <Icon name='file pdf' size='massive' style={{color:"whitesmoke"}}/></Link>
                     </div>
                     <div className="body">
                     <p>Issue Results</p>

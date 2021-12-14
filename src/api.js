@@ -8,6 +8,9 @@ export default {
                 .then(res =>  res.data.user),
         register: user =>
             axios.post('/api/postUser', { user })
+                .then(res => res.data.user),
+        registerstaff: user =>
+            axios.post('/api/addStaff', { user })
                 .then(res => res.data.user)
     }
 
