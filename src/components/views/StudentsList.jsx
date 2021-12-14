@@ -23,36 +23,36 @@ class StudentsList extends Component {
     }
 
     componentDidMount=()=> {
-        axios.get('/api/getuser')
+        axios.get('/api/getuser1')
             .then(response=>{
                 console.log(response)
                     this.setState({students1: response.data})
             })
-            // axios.get('/api/getuser2')
-            // .then(response=>{
-            //     console.log(response)
-            //         this.setState({students2: response.data})
-            // })
-            // axios.get('/api/getuser3')
-            // .then(response=>{
-            //     console.log(response)
-            //         this.setState({students3: response.data})
-            // })
-            // axios.get('/api/getuser4')
-            // .then(response=>{
-            //     console.log(response)
-            //         this.setState({students4: response.data})
-            // })
-            // axios.get('/api/getuser5')
-            // .then(response=>{
-            //     console.log(response)
-            //         this.setState({students5: response.data})
-            // })
-            // axios.get('/api/getuser6')
-            // .then(response=>{
-            //     console.log(response)
-            //         this.setState({students6: response.data})
-            // })
+            axios.get('/api/getuser2')
+            .then(response=>{
+                console.log(response)
+                    this.setState({students2: response.data})
+            })
+            axios.get('/api/getuser3')
+            .then(response=>{
+                console.log(response)
+                    this.setState({students3: response.data})
+            })
+            axios.get('/api/getuser4')
+            .then(response=>{
+                console.log(response)
+                    this.setState({students4: response.data})
+            })
+            axios.get('/api/getuser5')
+            .then(response=>{
+                console.log(response)
+                    this.setState({students5: response.data})
+            })
+            axios.get('/api/getuser6')
+            .then(response=>{
+                console.log(response)
+                    this.setState({students6: response.data})
+            })
     }
 
  renderStudents=()=>{
