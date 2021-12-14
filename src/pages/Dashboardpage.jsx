@@ -37,7 +37,7 @@ class Dashboardpage extends Component {
                     </div>
                     <div className="left-menu">
                     <div className="head">
-                        <Link to=""><Icon name='universal access' size="massive" style={{color:"whitesmoke"}}/></Link>
+                        <Link to="/student"><Icon name='universal access' size="massive" style={{color:"whitesmoke"}}/></Link>
                     </div>
                     <div className="body">
                     <p>Access Students</p>

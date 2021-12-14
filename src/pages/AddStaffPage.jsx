@@ -28,7 +28,7 @@ class RegisterStaffPage extends Component {
                 <div className="login-body">
                     <div className="login-form">
                         <div style={{display: "flex", flexDirection: 'row', alignItems: 'space-between', paddingBottom: '10vh'}}>
-                        <img src={"assets/images/bulb.png"}  height="100px" width="100px" style={{flex: '3', alignSelf: 'left'}}/>
+                        <img src={"assets/images/brain.svg"}  height="100px" width="100px" style={{flex: '3', alignSelf: 'left'}}/>
                         <div className="login-text">
                           Staff Register<br/><br/><span style={{color: '#800080'}}>Calibrain</span>
                         </div>

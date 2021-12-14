@@ -204,7 +204,13 @@
     color: #f5f5f5;
 }
 
-
+.names{
+    font-family: 'Irish Grover' !important;
+    padding: 2%;
+    font-size: small;
+    color: #800080;
+    text-transform: capitalize !important;
+}
 
 @media screen and (max-width: 600px){
 
@@ -232,6 +238,13 @@
         flex-direction: column;
         width: 90%;
         margin: auto;
+    }
+
+    .names{
+        font-family: 'Irish Gover' !important;
+        padding: 2%;
+        font-size: medium;
+        text-transform:uppercase;
     }
     .left-menu{
         flex: 1;

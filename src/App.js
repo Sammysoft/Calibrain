@@ -5,6 +5,7 @@ import Loginpage from "./pages/Loginpage";
 import RegisterPage from "./pages/RegisterPage";
 import DashboardPage from "./pages/Dashboardpage";
 import AddStaffPage from "./pages/AddStaffPage";
+import StudentsList from "./components/views/StudentsList";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <Route path='/register' exact component={RegisterPage} />
       <Route path="/dashboard" exact component={DashboardPage} />
       <Route path="/staff" exact component={AddStaffPage} />
+      <Route path="/student" exact component={StudentsList} />
+
     </div>
    </>
   );
