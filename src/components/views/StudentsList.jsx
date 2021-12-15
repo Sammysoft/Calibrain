@@ -68,70 +68,74 @@ class StudentsList extends Component {
      return (
          <>
                 <div className="center-list">
-                <Dropdown text='Junior Secondary School 1' pointing className='link item'>
-                    <Dropdown.Menu>
-                    <Dropdown.Item>
-                        { students1.map(student=>(
-                            <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
-                        ))}
-                    </Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                <Dropdown fluid
+                placeholder='Junior Secondary School 1'
+                selection
+                options= { students1.map(student=>(
+                    <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
+                ))}
+                />
+
          </div>
          <div className="center-list">
-         <Dropdown text='Junior Secondary School 2' pointing className='link item'>
-             <Dropdown.Menu>
-             <Dropdown.Item>
-                 { students2.map(student=>(
-                     <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
-                 ))}
-             </Dropdown.Item>
-             </Dropdown.Menu>
-         </Dropdown>
+         <Dropdown
+         fluid
+         selection
+          placeholder='Junior Secondary School 2'
+         options= { students2.map(student=>(
+            <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
+        ))}
+         />
+
   </div>
   <div className="center-list">
-  <Dropdown text='Junior Secondary School 3' pointing className='link item'>
-      <Dropdown.Menu>
-      <Dropdown.Item>
-          { students3.map(student=>(
-              <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
-          ))}
-      </Dropdown.Item>
-      </Dropdown.Menu>
-  </Dropdown>
+  <Dropdown
+  fluid
+  selection
+  placeholder='Junior Secondary School 3'
+  options={ students3.map(student=>(
+    <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
+))}
+
+  />
 </div>
 <div className="center-list">
-  <Dropdown text='Senior Secondary School 1' pointing className='link item'>
-      <Dropdown.Menu>
-      <Dropdown.Item>
-          { students4.map(student=>(
-              <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
-          ))}
-      </Dropdown.Item>
-      </Dropdown.Menu>
-  </Dropdown>
+  <Dropdown
+  fluid
+  selection
+  placeholder='Senior Secondary School 1'
+  options=  { students5.map(student=>(
+    <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
+))}
+  />
 </div>
 <div className="center-list">
-  <Dropdown text='Senior Secondary School 2' pointing className='link item'>
-      <Dropdown.Menu>
-      <Dropdown.Item>
-          { students5.map(student=>(
-              <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
-          ))}
-      </Dropdown.Item>
-      </Dropdown.Menu>
-  </Dropdown>
+  <Dropdown
+  fluid
+  selection
+  placeholder='Senior Secondary School 2'
+  options=  { students5.map(student=>(
+    <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
+))}
+  />
 </div>
 <div className="center-list">
-  <Dropdown text='Senior Secondary School 3' pointing className='link item'>
-      <Dropdown.Menu>
-      <Dropdown.Item>
-          { students6.map(student=>(
-              <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
-          ))}
-      </Dropdown.Item>
-      </Dropdown.Menu>
-  </Dropdown>
+  <Dropdown
+  placeholder='Senior Secondary School 3'
+  fluid
+
+  selection
+   options=
+    { students6.map(student=>(
+        <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
+    ))}
+
+
+  />
+
+
+
+
 </div>
          </>
      )
