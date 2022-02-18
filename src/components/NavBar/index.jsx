@@ -18,7 +18,7 @@ const Navbar =({logout}) =>{
         <>
             <div className="ui container">
             <Menu  className="menu"  secondary  pointing>
-                    <Menu.Item>Calibrain</Menu.Item>
+                    <Menu.Item>Calibrain Dashboard Page</Menu.Item>
 
                     <Menu.Menu position="right">
                         <Dropdown trigger={<Image avatar src={'assets/images/brain.svg'}/>}>

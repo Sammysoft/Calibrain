@@ -5,6 +5,7 @@ import { Icon } from 'semantic-ui-react'
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom'
 import * as actions from "../actions/auth"
+import FalseAuth from '../components/auth'
 
 function mapStateToProps(state) {
     return {
@@ -78,12 +79,7 @@ class Dashboardpage extends Component {
                     </div>
                     </div>
                 </div>
-              </div>: Swal.fire({
-                title: 'Not Authenticated!',
-                text: 'You are required to log in',
-                icon: 'warning'
-              }) }
-
+              </div>:<FalseAuth />}
             </>
         )
     }

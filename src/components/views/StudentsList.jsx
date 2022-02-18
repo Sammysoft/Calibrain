@@ -104,7 +104,7 @@ class StudentsList extends Component {
   fluid
   selection
   placeholder='Senior Secondary School 1'
-  options=  { students5.map(student=>(
+  options=  { students4.map(student=>(
     <span key={student._id} style={{display: 'flex', flexDirection: 'row', padding: '5%'}}><img src={student.imageuri} height={'50px'} width={'50px'} style={{borderRadius: '50%', border: '1px solid #800080'}}></img><div className="names" style={{fontFamily: "Irish Gover", textTransform: 'capitalize'}}>{student.firstname} {student.lastname}</div> </span>
 ))}
   />

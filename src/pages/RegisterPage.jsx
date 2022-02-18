@@ -6,6 +6,16 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { register } from  '../actions/users';
 import Swal from 'sweetalert2';
+import FalseAuth from '../components/auth';
+
+
+
+function mapStateToProps(state) {
+    return {
+            user: state.user,
+            isAuthenticated: !!state.user.accesstoken
+    };
+}
 
 class RegisterPage extends Component {
 
@@ -15,9 +25,11 @@ class RegisterPage extends Component {
     )
 
     render() {
+        const { user } = this.props;
+         const { isAuthenticated } = this.props;
         return (
             <>
-            <div className="login-wrapper">
+          {isAuthenticated ?   <div className="login-wrapper">
              <div className="login-content">
              <div className="back-arrow-wrapper" style={{paddingBottom: "50px"}}>
                     <span>
@@ -38,7 +50,7 @@ class RegisterPage extends Component {
                 </div>
              </div>
 
-              </div>
+              </div>: <FalseAuth/>}
             </>
         );
     }
@@ -51,4 +63,4 @@ RegisterPage.propTypes = {
     register : PropTypes.func.isRequired
 }
 
-export default connect(null, { register })(RegisterPage);
+export default connect(mapStateToProps, { register })(RegisterPage);
